@@ -1,0 +1,90 @@
+.heroContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backgroundLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f172a;
+    /* Fallback dark color */
+}
+
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+    will-change: transform;
+}
+
+.leftPanel {
+    left: 0;
+}
+
+.rightPanel {
+    right: 0;
+}
+
+.imageWrapper {
+    position: absolute;
+    top: 0;
+    width: 200%;
+    /* Double width to accommodate the inverse movement */
+    height: 100%;
+    will-change: transform;
+}
+
+.leftPanel .imageWrapper {
+    left: 0;
+}
+
+.rightPanel .imageWrapper {
+    right: 0;
+    /* Align to right edge of right panel */
+    transform: translateX(-50%);
+    /* Shift back to center the image relative to the curtain initially? No, let's handle in GSAP or simple CSS */
+    /* Actually, for right panel (width 50vw), we want the image (width 100vw) to sit such that it looks continuous.
+     If right panel is at 50vw.
+     Inner image needs to be positioned so it matches the right half of the viewport.
+     Let's simplify: 
+     Left Panel: width 50vw. Inner Img: width 100vw. Left: 0.
+     Right Panel: width 50vw. Inner Img: width 100vw. Right: 0.
+  */
+    right: 0;
+}
+
+.curtainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title {
+    position: absolute;
+    z-index: 20;
+    font-family: 'Inter', sans-serif;
+    /* Or any premium font */
+    font-size: 10vw;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    white-space: nowrap;
+    will-change: letter-spacing;
+}
