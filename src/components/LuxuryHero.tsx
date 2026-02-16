@@ -38,8 +38,8 @@ const LuxuryHero = () => {
                 .to(leftImageRef.current, { xPercent: 50, ease: "none" }, 0)
                 .to(rightImageRef.current, { xPercent: -50, ease: "none" }, 0)
 
-                // Typography Expansion
-                .to(titleRef.current, { scale: 1.5, opacity: 0, ease: "power1.inOut" }, 0);
+                // Typography Expansion - Delayed to let curtains open first
+                .to(titleRef.current, { scale: 1.5, opacity: 0, ease: "power1.inOut" }, 0.4);
 
         }, containerRef);
 
