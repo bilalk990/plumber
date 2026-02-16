@@ -39,7 +39,7 @@ const LuxuryHero = () => {
                 .to(rightImageRef.current, { xPercent: -50, ease: "none" }, 0)
 
                 // Typography Expansion
-                .to(titleRef.current, { letterSpacing: "2vw", scale: 1.2, opacity: 0, ease: "power1.inOut" }, 0);
+                .to(titleRef.current, { scale: 1.5, opacity: 0, ease: "power1.inOut" }, 0);
 
         }, containerRef);
 
